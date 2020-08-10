@@ -1,12 +1,13 @@
+{ pkgs ? import <nixpkgs> {} }:
 let
-  pkgs = import <nixpkgs> {};
-
-  nixops = import ./default.nix { inherit pkgs; };
+  nixops = import ./nixops-pluggable.nix { inherit pkgs; };
 in
 (
   nixops.withPlugins (
     ps: [
-      ps.nixopsaws
+      ps.nixops-aws
+      ps.nixops-virtd
+      ps.nixopsvbox
     ]
   )
 )

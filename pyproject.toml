@@ -1,13 +1,15 @@
 [tool.poetry]
-name = "nixopsenv"
+name = "nixops-with-plugins"
 version = "0.1.0"
 description = ""
-authors = ["adisbladis <adisbladis@gmail.com>"]
+authors = ["adisbladis <adisbladis@gmail.com>", "typetetris <ericwolf42@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-nixops = {git = "https://github.com/adisbladis/nixops.git", rev = "poetry2nix-plugins"}
-nixopsaws = {git = "https://github.com/adisbladis/nixops-aws.git", rev = "poetry2nix-plugins"}
+nixops = {git = "https://github.com/nixos/nixops.git"}
+nixops-aws = {git = "https://github.com/nixos/nixops-aws.git"}
+nixopsvbox = {git = "https://github.com/nix-community/nixops-vbox.git"}
+nixops-virtd = {git = "https://github.com/nix-community/nixops-libvirtd.git"}
 
 [tool.poetry.dev-dependencies]
 

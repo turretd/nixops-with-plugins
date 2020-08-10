@@ -8,4 +8,11 @@ self: super: {
       ];
     }
   );
+
+  libvirt-python = super.libvirt-python.overridePythonAttrs({ nativeBuildInputs ? [], ... }: {
+    format = "pyproject";
+    nativeBuildInputs = nativeBuildInputs ++ [ pkgs.pkgconfig ];
+    propagatedBuildInputs = [ pkgs.libvirt ];
+  });
+
 }
