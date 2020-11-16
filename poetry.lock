@@ -126,9 +126,9 @@ libvirt-python = "^6.1"
 nixops = "branch master"
 
 [package.source]
-reference = "af6cf5b2ced57b7b6d36b5df7dd27a14e0a5cfb6"
+reference = "7df6b68a12595b9c3c552c13c38c8f3b9a97d3c4"
 type = "git"
-url = "https://github.com/nix-community/nixops-libvirtd.git"
+url = "https://github.com/typetetris/nixops-libvirtd.git"
 [[package]]
 category = "main"
 description = ""
