@@ -5,6 +5,7 @@ let
   overridesXX = import ./overrides.nix {
     inherit (pkgs) lib runCommandNoCC symlinkJoin;
     inherit poetry2nix;
+    inherit (pkgs) python37;
   };
 
   overrides = overridesXX.overrides;
@@ -28,6 +29,7 @@ in
         (poetry2nix.mkPoetryEnv {
           projectDir = ./.;
           inherit overrides;
+          python = pkgs.python37;
         })
         pkgs.poetry
       ];
