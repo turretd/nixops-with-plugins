@@ -1,7 +1,9 @@
 {
   description = "NixOps with several plugins installed.";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
+  # with nixos-20.03 it builds. Doesn't with nixos-20.09 even
+  # with python fixed to 3.7.
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.03"; 
   inputs.utils.url = "github:numtide/flake-utils";
 
   inputs.poetry2nix-src.url = "github:nix-community/poetry2nix";
