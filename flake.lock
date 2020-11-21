@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1605946670,
-        "narHash": "sha256-n20fR2kusiHeG21z+jGZe4uqemlf1yBE9HRu4H9Ebn4=",
+        "lastModified": 1605969704,
+        "narHash": "sha256-91Mh98nytjcfNuO4kay3cWbjNfGkOtyvIsPIyUya6Xk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7bea3c7976aa6cb4f9c3614bda2dbbe6dd18dc9b",
+        "rev": "a0efbc1b68d82ab9bc58b288827c78a5f752c607",
         "type": "github"
       },
       "original": {
@@ -16,11 +16,18 @@
       }
     },
     "poetry2nix-src": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1605949057,
-        "narHash": "sha256-qBRK2Rk5Z/UUnrOoD7kL7D/fq387VniKKPwDt34ih1s=",
-        "type": "git",
-        "url": "file:///home/typetetris/repos/poetry2nix"
+        "lastModified": 1605832127,
+        "narHash": "sha256-iKbp9syQf82uIP0t9T7yo+Rn/k2/+w71p28wzJ6wjY4=",
+        "owner": "nix-community",
+        "repo": "poetry2nix",
+        "rev": "1894b501cf4431fb218c4939a9acdbf397ac1803",
+        "type": "github"
       },
       "original": {
         "owner": "nix-community",
