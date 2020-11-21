@@ -1,17 +1,9 @@
-{ pkgs ? import <nixpkgs> {} }:
 let
-  overrides = import ./overrides.nix { inherit pkgs; };
+  sources = import ./nix/sources.nix;
+  pkgs = import sources.nixpkgs {
+    overlays = [ (import (sources.poetry2nix + "/overlay.nix")) ];
+  };
 in
-pkgs.mkShell {
-
-  buildInputs = [
-    (
-      pkgs.poetry2nix.mkPoetryEnv {
-        projectDir = ./.;
-        overrides = pkgs.poetry2nix.overrides.withDefaults (overrides);
-      }
-    )
-    pkgs.poetry
-  ];
-
-}
+  { pkgs ? pkgs,
+  }:
+(import ./nixops-pluggable.nix { inherit pkgs; }).devShell
