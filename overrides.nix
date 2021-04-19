@@ -1,10 +1,10 @@
-{ symlinkJoin, runCommandNoCC, lib, poetry2nix, python37 }:
+{ symlinkJoin, runCommandNoCC, lib, poetry2nix, python38 }:
 let
 
   interpreter = (poetry2nix.mkPoetryPackages {
       projectDir = ./.;
       inherit overrides;
-      python = python37;
+      python = python38;
     }).python;
   # Make a python derivation pluginable
   #

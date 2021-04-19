@@ -5,7 +5,7 @@ let
   overridesXX = import ./overrides.nix {
     inherit (pkgs) lib runCommandNoCC symlinkJoin;
     inherit poetry2nix;
-    inherit (pkgs) python37;
+    inherit (pkgs) python38;
   };
 
   overrides = overridesXX.overrides;
@@ -16,9 +16,7 @@ in
     nixopsPluggable = interpreter.pkgs.nixops;
 
     nixops = nixopsPluggable.withPlugins (ps: [
-      ps.nixops-aws
-      ps.nixops-virtd
-      ps.nixopsvbox
+      ps.nixops-hetznercloud
     ]);
 
     devShell = pkgs.mkShell {
@@ -26,9 +24,10 @@ in
         (poetry2nix.mkPoetryEnv {
           projectDir = ./.;
           inherit overrides;
-          python = pkgs.python37;
+          python = pkgs.python38;
         })
         pkgs.poetry
+        nixops
       ];
     };
   }

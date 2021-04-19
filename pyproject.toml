@@ -5,11 +5,8 @@ description = ""
 authors = ["adisbladis <adisbladis@gmail.com>", "typetetris <ericwolf42@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
-nixops = {git = "https://github.com/nixos/nixops.git", branch = "master"}
-nixops-aws = {git = "https://github.com/nixos/nixops-aws.git", branch = "master"}
-nixopsvbox = {git = "https://github.com/nix-community/nixops-vbox.git", branch = "master"}
-nixops-virtd = {git = "https://github.com/typetetris/nixops-libvirtd.git", branch = "master"}
+python = ">=3.8,<3.9"
+nixops-hetznercloud = {git = "https://github.com/lukebfox/nixops-hetznercloud", branch = "master"} 
 
 [tool.poetry.dev-dependencies]
 
